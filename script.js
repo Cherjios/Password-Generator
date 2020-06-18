@@ -41,6 +41,10 @@ var lowercase = ["q","w","e","r","t","y","u","i","o","p",
 
 // 10 characters 
 var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+var PasswordToPrint = [];
+
+var RandomNumber = 0;
   
   
   
@@ -52,6 +56,13 @@ var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
           PasswordCharacteres = copyArray(numeric);
           // Console.log the whole array to generate password
           // console.log(PasswordCharacteres);
+
+          for ( var j = 0; j <= lengthPassword; j++){
+                RandomNumber = getRandomInt(1,94);
+                PasswordToPrint[i] = PasswordCharacteres[RandomNumber]
+          }
+          return PasswordToPrint;
+
 
 
         }
