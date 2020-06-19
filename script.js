@@ -14,13 +14,13 @@ generateBtn.addEventListener("click", writePassword);
 
 //Function to generate PassWord
 function generatePassword(){
-  var ConfirmSpecialCharactere = confirm("Do you want Special Characters included on your Password?");
+  var ConfirmSpecialCharacter = confirm("Do you want Special Characters included on your Password?");
   var ConfirmUppercase = confirm("Do you want uppercase Characters included on your Password?");
-  var ConfirmLowercases = confirm("Do you want Lowercase Characters included on your Password?");
+  var ConfirmLowercase = confirm("Do you want Lowercase Characters included on your Password?");
   var ConfirmNumeric = confirm("Do you want Numeric Characters included on your Password?");
   var lengthPassword = prompt("Select the length of your password between 8 and 128 Characters");
   var validatelength = false;
-  var PasswordCharacteres = [];
+  var PasswordCharacters = [];
 
 
   // Declaring arrays to generate passwords 
@@ -49,21 +49,25 @@ var RandomNumber = 0;
   
   
     if (lengthPassword >= 8 && lengthPassword <= 128){
-        if(ConfirmSpecialCharactere && ConfirmUppercase && ConfirmLowercases && ConfirmNumeric){
-          PasswordCharacteres = copyArray(SpecialCharacters);
-          console.log(PasswordCharacteres);
-          pushingArray( uppercase,PasswordCharacteres);
-          console.log(PasswordCharacteres);
-          pushingArray( lowercase,PasswordCharacteres);
-          console.log(PasswordCharacteres);
-          pushingArray( numeric,PasswordCharacteres);
-          console.log(PasswordCharacteres);
+        if(ConfirmSpecialCharacter && ConfirmUppercase && ConfirmLowercase && ConfirmNumeric){
+          //Concat arrays to get the final Password characters 
+          // Copy Special Characters to the PasswordCharacters
+          PasswordCharacters = copyArray(SpecialCharacters);
+          console.log(PasswordCharacters);
+          // Copy uppercase to the PasswordCharacters
+          pushingArray( uppercase,PasswordCharacters);
+          console.log(PasswordCharacters);
+          // Copy Special lowercase to the PasswordCharacters
+          pushingArray( lowercase,PasswordCharacters);
+          console.log(PasswordCharacters);
+          // Copy numeric  to the PasswordCharacters
+          pushingArray( numeric,PasswordCharacters);
+          console.log(PasswordCharacters);
          
-
           for ( var j = 0; j < lengthPassword; j++){
-                RandomNumber = getRandomInt(1,PasswordCharacteres.length);
+                RandomNumber = getRandomInt(1,PasswordCharacters.length);
                 console.log(RandomNumber);
-                PasswordToPrint.push(PasswordCharacteres[RandomNumber]);
+                PasswordToPrint.push(PasswordCharacters[RandomNumber]);
           }
           return PasswordToPrint.join('');
 
