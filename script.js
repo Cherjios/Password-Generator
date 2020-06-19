@@ -14,11 +14,11 @@ generateBtn.addEventListener("click", writePassword);
 
 //Function to generate PassWord
 function generatePassword(){
-  var ConfirmSpecialCharacter = confirm("Do you want Special Characters included on your Password?");
-  var ConfirmUppercase = confirm("Do you want uppercase Characters included on your Password?");
-  var ConfirmLowercase = confirm("Do you want Lowercase Characters included on your Password?");
-  var ConfirmNumeric = confirm("Do you want Numeric Characters included on your Password?");
-  var lengthPassword = prompt("Select the length of your password between 8 and 128 Characters");
+  var ConfirmSpecialCharacter = confirm("Would you like Special Characters included on your Password?");
+  var ConfirmUppercase = confirm("Would you like uppercase Characters included on your Password?");
+  var ConfirmLowercase = confirm("Would you like Lowercase Characters included on your Password?");
+  var ConfirmNumeric = confirm("Would you like Numeric Characters included on your Password?");
+  var lengthPassword = prompt(" The length of your password  should be between 8 and 128 Characters");
   var PasswordCharacters = [];
   var PasswordToPrint = [];
 
@@ -191,7 +191,7 @@ function generatePassword(){
          }
          else{
           //Generate the password to print
-            alert("You have to chose at least one option")
+            alert("You have to chose at least one option of Special characters, uppercase, lowercase or numeric")
             PasswordToPrint = " ";
             return PasswordToPrint.join('');
          }
