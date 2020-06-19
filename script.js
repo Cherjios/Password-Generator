@@ -65,7 +65,7 @@ var RandomNumber = 0;
                 console.log(RandomNumber);
                 PasswordToPrint.push(PasswordCharacteres[RandomNumber]);
           }
-          return PasswordToPrint;
+          return PasswordToPrint.join('');
 
 
 
