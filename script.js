@@ -185,6 +185,24 @@ var RandomNumber = 0;
            PasswordToPrint = GetPasswordToPrint(lengthPassword, uppercase);
            return PasswordToPrint.join('');
          }
+         else if (ConfirmLowercase){
+          //Generate the password to print
+           PasswordToPrint = GetPasswordToPrint(lengthPassword, lowercase);
+           return PasswordToPrint.join('');
+         }
+         else if (ConfirmNumeric){
+          //Generate the password to print
+           PasswordToPrint = GetPasswordToPrint(lengthPassword, numeric);
+           return PasswordToPrint.join('');
+         }
+         else{
+          //Generate the password to print
+            alert("You have to chose at least one option")
+            return; 
+          
+          
+         }
+        
 
     }
     else{
