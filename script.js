@@ -21,6 +21,7 @@ function generatePassword(){
   var lengthPassword = prompt("Select the length of your password between 8 and 128 Characters");
   var validatelength = false;
   var PasswordCharacters = [];
+  var PasswordToPrint = [];
 
 
   // Declaring arrays to generate passwords 
@@ -42,7 +43,7 @@ var lowercase = ["q","w","e","r","t","y","u","i","o","p",
 // 10 characters 
 var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-var PasswordToPrint = [];
+
 
 var RandomNumber = 0;
   
@@ -63,16 +64,10 @@ var RandomNumber = 0;
           // Copy numeric  to the PasswordCharacters
           pushingArray( numeric,PasswordCharacters);
           console.log(PasswordCharacters);
-         
-          for ( var j = 0; j < lengthPassword; j++){
-                RandomNumber = getRandomInt(1,PasswordCharacters.length);
-                console.log(RandomNumber);
-                PasswordToPrint.push(PasswordCharacters[RandomNumber]);
-          }
+         //Generate the password to print
+          PasswordToPrint = GetPasswordToPrint(lengthPassword,PasswordCharacters);
+
           return PasswordToPrint.join('');
-
-
-
         }
 
 
@@ -99,7 +94,7 @@ function copyArray (array){
   }
   return newArray;
 }
-
+// Function to concat two arrays
 function pushingArray (arrayA, ArrayB ){
   for(var i = 0; i < arrayA.length; i++){
       ArrayB.push(arrayA[i]);
@@ -107,13 +102,20 @@ function pushingArray (arrayA, ArrayB ){
   return ArrayB;
 }
 
-
-
-
-
 // Function to get random int 
+// this codes comes from https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function GetPasswordToPrint(lengthPassword, PasswordCharacters ){
+  var PasswordToPrint = [];
+  for ( var j = 0; j < lengthPassword; j++){
+    RandomNumber = getRandomInt(0,PasswordCharacters.length - 1);
+    console.log(RandomNumber);
+    PasswordToPrint.push(PasswordCharacters[RandomNumber]);
+  }
+  return PasswordToPrint;
 }
