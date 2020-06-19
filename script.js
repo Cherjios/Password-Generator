@@ -66,10 +66,23 @@ var RandomNumber = 0;
           console.log(PasswordCharacters);
          //Generate the password to print
           PasswordToPrint = GetPasswordToPrint(lengthPassword,PasswordCharacters);
-
           return PasswordToPrint.join('');
         }
-
+        else if (ConfirmSpecialCharacter && ConfirmUppercase && ConfirmLowercase){
+          //Concat arrays to get the final Password characters 
+          // Copy Special Characters to the PasswordCharacters
+          PasswordCharacters = copyArray(SpecialCharacters);
+          console.log(PasswordCharacters);
+          // Copy uppercase to the PasswordCharacters
+          pushingArray( uppercase,PasswordCharacters);
+          console.log(PasswordCharacters);
+          // Copy Special lowercase to the PasswordCharacters
+          pushingArray( lowercase,PasswordCharacters);
+          console.log(PasswordCharacters);
+         //Generate the password to print
+          PasswordToPrint = GetPasswordToPrint(lengthPassword,PasswordCharacters);
+          return PasswordToPrint.join('');
+        }
 
 
     }
