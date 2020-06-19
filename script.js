@@ -60,8 +60,8 @@ var RandomNumber = 0;
           console.log(PasswordCharacteres);
          
 
-          for ( var j = 0; j <= lengthPassword; j++){
-                RandomNumber = getRandomInt(1,94);
+          for ( var j = 0; j < lengthPassword; j++){
+                RandomNumber = getRandomInt(1,PasswordCharacteres.length);
                 console.log(RandomNumber);
                 PasswordToPrint.push(PasswordCharacteres[RandomNumber]);
           }
