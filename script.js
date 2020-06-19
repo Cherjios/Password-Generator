@@ -51,15 +51,19 @@ var RandomNumber = 0;
     if (lengthPassword >= 8 && lengthPassword <= 128){
         if(ConfirmSpecialCharactere && ConfirmUppercase && ConfirmLowercases && ConfirmNumeric){
           PasswordCharacteres = copyArray(SpecialCharacters);
-          PasswordCharacteres = copyArray(uppercase);
-          PasswordCharacteres = copyArray(lowercase);
-          PasswordCharacteres = copyArray(numeric);
-          // Console.log the whole array to generate password
-          // console.log(PasswordCharacteres);
+          console.log(PasswordCharacteres);
+          pushingArray( uppercase,PasswordCharacteres);
+          console.log(PasswordCharacteres);
+          pushingArray( lowercase,PasswordCharacteres);
+          console.log(PasswordCharacteres);
+          pushingArray( numeric,PasswordCharacteres);
+          console.log(PasswordCharacteres);
+         
 
           for ( var j = 0; j <= lengthPassword; j++){
                 RandomNumber = getRandomInt(1,94);
-                PasswordToPrint[i] = PasswordCharacteres[RandomNumber]
+                console.log(RandomNumber);
+                PasswordToPrint.push(PasswordCharacteres[RandomNumber]);
           }
           return PasswordToPrint;
 
@@ -85,12 +89,23 @@ var RandomNumber = 0;
 // Function to copy an array of 
 
 function copyArray (array){
-  var newArray = []
+  var newArray = [];
   for(var i = 0; i < array.length; i++){
-    newArray[i] = array.push(i);
+    newArray.push(array[i]);
   }
-  return newArray
+  return newArray;
 }
+
+function pushingArray (arrayA, ArrayB ){
+  for(var i = 0; i < arrayA.length; i++){
+      ArrayB.push(arrayA[i]);
+  }
+  return ArrayB;
+}
+
+
+
+
 
 // Function to get random int 
 function getRandomInt(min, max) {
