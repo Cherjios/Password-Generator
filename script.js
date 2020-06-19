@@ -19,7 +19,6 @@ function generatePassword(){
   var ConfirmLowercase = confirm("Do you want Lowercase Characters included on your Password?");
   var ConfirmNumeric = confirm("Do you want Numeric Characters included on your Password?");
   var lengthPassword = prompt("Select the length of your password between 8 and 128 Characters");
-  var validatelength = false;
   var PasswordCharacters = [];
   var PasswordToPrint = [];
 
@@ -134,7 +133,7 @@ var RandomNumber = 0;
           PasswordCharacters = copyArray(SpecialCharacters);
           console.log(PasswordCharacters);
           // Copy uppercase to the PasswordCharacters
-          pushingArray( uppercase,PasswordCharacters);
+          pushingArray(uppercase,PasswordCharacters);
           console.log(PasswordCharacters);
          //Generate the password to print
           PasswordToPrint = GetPasswordToPrint(lengthPassword,PasswordCharacters);
@@ -146,7 +145,7 @@ var RandomNumber = 0;
           PasswordCharacters = copyArray(lowercase);
           console.log(PasswordCharacters);
           // Copy uppercase to the PasswordCharacters
-          pushingArray( Number,PasswordCharacters);
+          pushingArray(numeric,PasswordCharacters);
           console.log(PasswordCharacters);
          //Generate the password to print
           PasswordToPrint = GetPasswordToPrint(lengthPassword,PasswordCharacters);
@@ -158,7 +157,7 @@ var RandomNumber = 0;
           PasswordCharacters = copyArray(SpecialCharacters);
           console.log(PasswordCharacters);
           // Copy uppercase to the PasswordCharacters
-          pushingArray( numeric,PasswordCharacters);
+          pushingArray(numeric,PasswordCharacters);
           console.log(PasswordCharacters);
          //Generate the password to print
           PasswordToPrint = GetPasswordToPrint(lengthPassword,PasswordCharacters);
@@ -170,20 +169,27 @@ var RandomNumber = 0;
           PasswordCharacters = copyArray(lowercase);
           console.log(PasswordCharacters);
           // Copy uppercase to the PasswordCharacters
-          pushingArray( uppercase,PasswordCharacters);
+          pushingArray(uppercase,PasswordCharacters);
           console.log(PasswordCharacters);
          //Generate the password to print
           PasswordToPrint = GetPasswordToPrint(lengthPassword,PasswordCharacters);
           return PasswordToPrint.join('');
         }
-
-
-
-
+        else if (ConfirmSpecialCharacter){
+         //Generate the password to print
+          PasswordToPrint = GetPasswordToPrint(lengthPassword,SpecialCharacters);
+          return PasswordToPrint.join('');
+        }
+        else if (ConfirmUppercase){
+          //Generate the password to print
+           PasswordToPrint = GetPasswordToPrint(lengthPassword, uppercase);
+           return PasswordToPrint.join('');
+         }
 
     }
     else{
       alert("Length password between 8 and 128")
+      stop;
   
     }
   
