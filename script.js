@@ -26,27 +26,21 @@ function generatePassword(){
   // Declaring arrays to generate passwords 
 
   // 33 Characters 
-var SpecialCharacters = [" ","!","\"","#", "$", "%", "&", "/'","(",")","*","+",",","-",".","/",":",";",
-"<","=",">", "?","@","[","\\","]","^","_","`","{","|","}","~"];
+  var SpecialCharacters = [" ","!","\"","#", "$", "%", "&", "/'","(",")","*","+",",","-",".","/",":",";",
+  "<","=",">", "?","@","[","\\","]","^","_","`","{","|","}","~"];
 
-// 26 Characters
-var uppercase = ["Q","W","E","R","T","Y","U","I","O","P",
-"A","S","D","F","G","H","J","K","L",
-"Z","X","C","V","B","N","M"];
+  // 26 Characters
+  var uppercase = ["Q","W","E","R","T","Y","U","I","O","P",
+  "A","S","D","F","G","H","J","K","L",
+  "Z","X","C","V","B","N","M"];
 
-// 26 Characters
-var lowercase = ["q","w","e","r","t","y","u","i","o","p",
-"a","s","d","f","g","h","j","k","l",
-"z","x","c","v","b","n","m"]
+  // 26 Characters
+  var lowercase = ["q","w","e","r","t","y","u","i","o","p",
+  "a","s","d","f","g","h","j","k","l",
+  "z","x","c","v","b","n","m"]
 
-// 10 characters 
-var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
-
-
-var RandomNumber = 0;
-  
-  
+  // 10 characters 
+  var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   
     if (lengthPassword >= 8 && lengthPassword <= 128){
         if(ConfirmSpecialCharacter && ConfirmUppercase && ConfirmLowercase && ConfirmNumeric){
@@ -198,23 +192,14 @@ var RandomNumber = 0;
          else{
           //Generate the password to print
             alert("You have to chose at least one option")
-            return; 
-          
-          
+            PasswordToPrint = " ";
+            return PasswordToPrint.join('');
          }
-        
-
     }
-    else{
-      alert("Length password between 8 and 128")
-      stop;
-  
+    else {
+      alert("Length of password must be between 8 and 128 characters");
+      return " "; 
     }
-  
-  
-
-  
-
 
 }
 
